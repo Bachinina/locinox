@@ -3032,7 +3032,7 @@ div.breadcrumbs__link:hover,
 	margin-right: 40px;
 	border: 5px solid #fff;
 	align-self: stretch;
-	background-color: #ff8200;
+	background-color: #fff;
 	display: flex !important;
 	align-items: center;
 	max-height: 100px;
@@ -3177,6 +3177,8 @@ div.breadcrumbs__link:hover,
 		border: 5px solid #ff8200;
 		margin-right: 10px
 	}
+
+
 
 	.header__search {
 		position: fixed;
@@ -5582,7 +5584,7 @@ p a:hover {
 .footer {
 	margin-top: auto;
 	padding-top: 60px;
-	background: #272727 url(/images/bg-footer.png);
+	background: #272727;
 	color: #828282;
 	text-align: left
 }
@@ -5860,9 +5862,7 @@ p a:hover {
 .card__item {
 	position: relative;
 	border: none;
-	min-height: 440px;
-	display: -webkit-box;
-	display: -ms-flexbox;
+	min-height: 370px;
 	display: flex;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
@@ -6068,9 +6068,9 @@ p a:hover {
 	transition: all 0.3s linear
 }
 
-.card__item:hover {
+/* .card__item:hover {
 	background-size: 98%
-}
+} */
 
 .card__item:hover .card__buttons-wrapper {
 	margin-top: 15px;
@@ -6085,13 +6085,13 @@ p a:hover {
 
 @media (max-width:1439px) {
 	.card__item {
-		min-height: 500px
+		min-height: 430px
 	}
 }
 
 @media (max-width:1199px) {
 	.card__item {
-		min-height: 410px
+		min-height: 350px
 	}
 
 	.card__buttons-wrapper {
@@ -6146,7 +6146,7 @@ p a:hover {
 
 @media (max-width:991px) {
 	.card__item {
-		min-height: 530px
+		min-height: 420px
 	}
 
 	.card__button {
@@ -6157,7 +6157,7 @@ p a:hover {
 @media (max-width:767px) {
 	.card__item {
 		border: none;
-		min-height: 480px
+		min-height: 370px
 	}
 
 	.card__button {
@@ -6169,7 +6169,7 @@ p a:hover {
 @media (max-width:575px) {
 	.card__item {
 		border: none;
-		min-height: 560px;
+		min-height: 450px;
 		max-width: 400px;
 		margin: 0 auto
 	}
@@ -6178,7 +6178,7 @@ p a:hover {
 @media (max-width:467px) {
 	.card__item {
 		border: none;
-		min-height: 520px;
+		min-height: 420px;
 		width: 100%;
 		max-width: 400px;
 		margin: 0 auto
@@ -8506,7 +8506,7 @@ a.link-icon {
 }
 
 .features--desc .features__item img {
-	max-width: 250px;
+	width: 250px;
 }
 
 @media (min-width:1200px) {
@@ -8761,7 +8761,8 @@ button:-moz-focusring {
 		max-height: 55px;
 		margin-right: 10px;
 		border-color: #ff8200;
-		padding: 0
+		padding: 0;
+		background-color: #ff8200;
 	}
 }
 
@@ -8794,7 +8795,7 @@ button:-moz-focusring {
 }
 
 .nav__menu-item.orange:hover {
-	background-color: #ff8200;
+	background-color: #ff8200 !important;
 }
 
 .nav__menu-item:hover>.nav__menu-link {
@@ -9616,6 +9617,10 @@ button:-moz-focusring {
 
 .show-more-block {
 	display: none;
+}
+
+.hidden {
+	visibility: hidden;
 }
 
 /* End */
