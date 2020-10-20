@@ -6093,6 +6093,14 @@ p a:hover {
 	.card__item {
 		min-height: 410px
 	}
+
+	.card__buttons-wrapper {
+		opacity: 1 !important;
+	}
+
+	.card__buttons {
+		opacity: 1 !important;
+	}
 }
 
 @media (max-width:991px) {
