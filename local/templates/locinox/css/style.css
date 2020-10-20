@@ -1,6 +1,6 @@
 @font-face {
 	font-family: "rouble";
-	src: url("/local/templates/locinox/fonts/rouble.otf") format("opentype");
+	src: url("../fonts/rouble.otf") format("opentype");
 }
 
 
@@ -2969,7 +2969,7 @@ body.compensate-for-scrollbar {
 }
 
 .breadcrumbs__link:hover {
-	color: #4F4F4F !important;
+	color: #121212 !important;
 	text-shadow: transparent 0px 0px 1px
 }
 
@@ -7736,7 +7736,7 @@ p a:hover {
 	height: 47px;
 	padding: 0;
 	text-align: center;
-	background-color: #333;
+	background-color: #121212;
 	z-index: 9999;
 	color: #e1e1e1;
 	transition: background-color 0.3s;
@@ -7744,7 +7744,7 @@ p a:hover {
 }
 
 .scrollup:hover {
-	background-color: #A80A2E;
+	background-color: #ff8200;
 }
 
 .scrollup:active,
@@ -7784,7 +7784,7 @@ p a:hover {
 
 .cards .pag-wrapper a,
 .cards .pag-wrapper b {
-	font: normal 400 16px/18px "Segoe UI Symbol";
+	font: normal 400 16px/18px "Segoe UI Symbol", 'Open Sans';
 	display: block;
 	color: #828282;
 	transition: 0.3s all;
@@ -8453,6 +8453,13 @@ a.link-icon {
 	transition: 0.3s all
 }
 
+.features__item h2 {
+	text-align: center;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+
 .features--desc {
 	position: relative;
 	justify-content: center;
@@ -8481,6 +8488,19 @@ a.link-icon {
 	margin: 20px 0
 }
 
+.features--desc .features__item {
+	padding: 20px 0;
+	border: none;
+}
+
+.features--desc .features__item:hover {
+	box-shadow: none;
+}
+
+.features--desc .features__item img {
+	max-width: 250px;
+}
+
 @media (min-width:1200px) {
 	.features--detail .features__item:hover {
 		margin-top: -5px
@@ -8506,12 +8526,13 @@ a.link-icon {
 }
 
 .features__item p {
-	color: #828282
+	color: #828282;
+	font-size: 14px;
 }
 
 .features__item img {
 	max-width: 100%;
-	width: 100px;
+	/* width: 100px; */
 }
 
 .features__item h3 {
