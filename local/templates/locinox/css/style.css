@@ -6451,11 +6451,21 @@ p a:hover {
 	font-size: 14px
 }
 
+.detail__info-block {
+	display: flex;
+	flex-direction: column;
+	padding-left: 40px;
+}
+
 @media (max-width:1199px) {
 
 	.detail__input-number--length::after,
 	.detail__input-number--width::after {
 		right: 15px
+	}
+
+	.detail__info-block {
+		padding-left: 15px;
 	}
 }
 
@@ -9850,6 +9860,16 @@ button:-moz-focusring {
 
 .detail__video:hover::after {
 	transform: translate(-35px, -50%) scale(1.1);
+}
+
+@media (max-width:1439px) {
+	.detail__item:not(:last-of-type) {
+		padding-right: 0;
+	}
+
+	.detail__item {
+		font-size: 14px;
+	}
 }
 
 
