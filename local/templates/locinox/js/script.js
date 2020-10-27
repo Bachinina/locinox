@@ -124,16 +124,16 @@
         value: !0
     });
     var l, m, n = function () {
-        function a(a, b) {
-            for (var c = 0; c < b.length; c++) {
-                var d = b[c];
-                d.enumerable = d.enumerable || !1, d.configurable = !0, "value" in d && (d.writable = !0), Object.defineProperty(a, d.key, d)
+            function a(a, b) {
+                for (var c = 0; c < b.length; c++) {
+                    var d = b[c];
+                    d.enumerable = d.enumerable || !1, d.configurable = !0, "value" in d && (d.writable = !0), Object.defineProperty(a, d.key, d)
+                }
             }
-        }
-        return function (b, c, d) {
-            return c && a(b.prototype, c), d && a(b, d), b
-        }
-    }(),
+            return function (b, c, d) {
+                return c && a(b.prototype, c), d && a(b, d), b
+            }
+        }(),
         o = window.WeakMap || window.MozWeakMap || function () {
             function a() {
                 c(this, a), this.keys = [], this.values = []
@@ -163,7 +163,7 @@
             }
             return n(a, [{
                 key: "observe",
-                value: function () { }
+                value: function () {}
             }]), a
         }(), l.notSupported = !0, m),
         q = window.getComputedStyle || function (a) {
@@ -467,3 +467,27 @@
         })
     }
 })();
+
+
+$(document).ready(function () {
+    $('[data-count]').each(function () {
+        const input = $(this).find('input');
+        const plus = $(this).find('[data-count-plus]');
+        const minus = $(this).find('[data-count-minus]');
+
+
+        minus.on('click', function () {
+            if (input.val() > 1) {
+                const current = parseInt(input.val());
+                input.val(current - 1);
+            }
+        });
+        plus.on('click', function () {
+            if (input.val() < parseInt(input.attr('max'))) {
+                const current = parseInt(input.val());
+                input.val(current + 1);
+            }
+        });
+
+    })
+});

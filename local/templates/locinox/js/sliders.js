@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
     //Main page
     var mainSlider = $('.slider__wrapper');
@@ -27,25 +27,25 @@ $(document).ready(function() {
     function setAnimation(_elem, _InOut) {
         var animationEndEvent = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
-        _elem.each(function() {
+        _elem.each(function () {
             var $elem = $(this);
             var $animationType = 'animated ' + $elem.data('animation-' + _InOut);
             $elem.removeClass($animationType);
 
-            $elem.addClass($animationType).one(animationEndEvent, function() {
+            $elem.addClass($animationType).one(animationEndEvent, function () {
                 $elem.removeClass($animationType);
             });
         });
     };
     setAnimation(firstSlide, 'in');
 
-    mainSlider.on('change.owl.carousel', function(event) {
+    mainSlider.on('change.owl.carousel', function (event) {
         var $currentItem = $('.owl-item', mainSlider).eq(event.item.index);
         var $elemsToanim = $currentItem.find("[data-animation-out]");
         setAnimation($elemsToanim, 'out');
     });
 
-    mainSlider.on('changed.owl.carousel', function(event) {
+    mainSlider.on('changed.owl.carousel', function (event) {
         var $currentItem = $('.owl-item', mainSlider).eq(event.item.index);
         var $elemsToanim = $currentItem.find("[data-animation-in]");
         setAnimation($elemsToanim, 'in');
@@ -136,19 +136,19 @@ $(document).ready(function() {
         .on("changed.owl.carousel", syncPosition);
 
     childCarousel
-        .on("initialized.owl.carousel", function() {
+        .on("initialized.owl.carousel", function () {
             childCarousel
                 .find(".owl-item")
                 .eq(0)
                 .addClass("current");
         })
         .owlCarousel({
-            items: 3,
+            items: 5,
             margin: 15,
             smartSpeed: 800,
             dots: false,
             slideBy: 4,
-            responsiveRefreshRate: 100
+            responsiveRefreshRate: 100,
         })
         .on("changed.owl.carousel", syncPosition2);
 
@@ -192,7 +192,7 @@ $(document).ready(function() {
         }
     }
 
-    childCarousel.on("click", ".owl-item", function(e) {
+    childCarousel.on("click", ".owl-item", function (e) {
         e.preventDefault();
         var number = $(this).index();
         parentCarousel.data("owl.carousel").to(number, 300, true);
