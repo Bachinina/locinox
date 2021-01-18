@@ -9319,11 +9319,16 @@ button:-moz-focusring {
 	line-height: 20px;
 }
 
-.post__title {
-	font-style: normal;
-	/* font-weight: bold; */
-	font-size: 36px;
-	line-height: 44px;
+
+@media (min-width: 1200px) {
+
+	.post__title {
+		font-style: normal;
+		/* font-weight: bold; */
+		font-size: 36px;
+		line-height: 44px;
+	}
+
 }
 
 .post__title2 {
