@@ -468,7 +468,6 @@
     }
 })();
 
-
 $(document).ready(function () {
     $('[data-count]').each(function () {
         const input = $(this).find('input');
@@ -489,5 +488,11 @@ $(document).ready(function () {
             }
         });
 
-    })
+    });
+
+
+    $('main').css({
+        'margin-top': $('.header__wrapper').height()
+    });
+
 });
