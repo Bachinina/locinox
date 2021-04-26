@@ -1534,13 +1534,12 @@
 														<div class="bx_filter_popup_result" id="modef" style="display: flex;">
 
 															<a class="card__button  card__button--inst button button--slider"
-																href="/catalog/laminat-pergo/filter/clear/apply/" id="show-results"
-																style="display: none;">Показать
-																(<span id="modef_num">0</span>)</a>
+																href="/catalog/laminat-pergo/filter/clear/apply/" id="show-results">Показать
+																(<span id="modef_num">1</span>)</a>
 
 
-															<input class="card__button card__button--buy button bx_filter_search_reset" type="submit"
-																id="del_filter" name="del_filter" value="Сбросить" />
+															<input class="card__button card__button--buy button bx_filter_search_reset d-block"
+																type="submit" id="del_filter" name="del_filter" value="Сбросить" />
 														</div>
 													</div>
 												</div>
@@ -2249,6 +2248,45 @@
 		<script type="text/javascript" src="local/templates/locinox/js/jquery.maskedinput.min.js"></script>
 
 
+		<!-- Скрипт для кнопок -->
+		<script>
+			(function () {
+				if (window.screen.width > 767) {
+					var filter = document.querySelector('.bx_form_filter_wrapper');
+					var panel = filter.querySelector('.bx_filter_button_box');
+
+					window.showFilterResults = function () {
+						if (((pageYOffset + innerHeight - 10) <= (filter.getBoundingClientRect().bottom + pageYOffset))) {
+
+							var panelHeight = panel.offsetHeight;
+							var padding = ((filter.getBoundingClientRect().bottom + pageYOffset) - (pageYOffset + innerHeight));
+							var maxPadding = filter.offsetHeight - panelHeight - 70;
+
+
+							if (panelHeight === 0) {
+								panelHeight = 46;
+								padding = ((filter.getBoundingClientRect().bottom + panelHeight + pageYOffset) - (pageYOffset +
+									innerHeight));
+							}
+
+							if (padding <= maxPadding) {
+								panel.style.bottom = `${padding + 45}` + 'px';
+							} else {
+								panel.style.bottom = '0';
+							}
+						} else {
+							panel.style.bottom = '0';
+						}
+					};
+
+
+					window.addEventListener('scroll', window.showFilterResults);
+					document.querySelector('.smartfilter').addEventListener('click', window.showFilterResults);
+				}
+			})();
+		</script>
+
+
 
 		<script>
 			// Search
@@ -2402,39 +2440,6 @@
 					document.querySelector('.quick-links').classList.remove('quick-links--active');
 					document.querySelector('.overlay').classList.remove('overlay--active');
 				})
-			})();
-
-			(function () {
-				var filter = document.querySelector('.bx_form_filter_wrapper');
-				var panel = filter.querySelector('.bx_filter_button_box');
-
-				window.showFilterResults = function () {
-					if (((pageYOffset + innerHeight - 10) <= (filter.getBoundingClientRect().bottom + pageYOffset))) {
-
-						var panelHeight = panel.offsetHeight;
-						var padding = ((filter.getBoundingClientRect().bottom + pageYOffset) - (pageYOffset + innerHeight));
-						var maxPadding = filter.offsetHeight - panelHeight - 70;
-
-
-						if (panelHeight === 0) {
-							panelHeight = 46;
-							padding = ((filter.getBoundingClientRect().bottom + panelHeight + pageYOffset) - (pageYOffset +
-								innerHeight));
-						}
-
-						if (padding <= maxPadding) {
-							panel.style.bottom = `${padding + 10}` + 'px';
-						} else {
-							panel.style.bottom = '0';
-						}
-					} else {
-						panel.style.bottom = '0';
-					}
-				};
-
-
-				window.addEventListener('scroll', window.showFilterResults);
-				document.querySelector('.smartfilter').addEventListener('click', window.showFilterResults);
 			})();
 		</script>
 

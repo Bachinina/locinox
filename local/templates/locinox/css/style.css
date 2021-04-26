@@ -8402,12 +8402,12 @@ a.link-icon {
 .quick-links__item .link-sample {
 	margin: 5px;
 	padding: 5px;
-	border: 1px solid #333;
+	border: 1px solid #ff8200;
 	box-sizing: border-box;
 	border-radius: 3px;
-	color: #333;
+	color: #fff;
 	transition: 0.3s all;
-	background-color: transparent
+	background-color: #ff8200;
 }
 
 .quick-links__item .link-sample:hover {
